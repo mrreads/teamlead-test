@@ -243,6 +243,56 @@ img {
     font-size: 22px;
 }
 
+.promo {
+    padding-top: 50px;
+
+    background: #8e9eab;
+    background: linear-gradient(to top, #eef2f3, #8e9eab);
+}
+
+.promo-info {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.promo-info img {
+    max-width: 500px;
+    margin-right: 75px;
+}
+
+.promo-info__text {
+    max-width: 500px;
+    font-size: 26px;
+}
+
+.promo-info__text p {
+    margin-bottom: 15px;
+}
+
+.promo-features {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    gap: 25px;
+
+    font-size: 26px;
+}
+
+.promo-button {
+    font-size: 26px;
+    transition: .3s all;
+    padding: 10px 35px;
+    border-radius: 45px;
+    font-weight: bold;
+}
+.promo-button:hover {
+    color: #FFFFFF;
+    background-color: #6d115e;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -262,6 +312,17 @@ img {
     }
     .reviews__text {
         font-size: 19px;
+    }
+    .promo-info {
+        justify-content: center;
+    }
+    .promo-info img {
+        margin-right: 35px;
+        max-width: 250px;
+    }
+    .promo-info__text {
+        flex-grow: 1;
+        font-size: 24px;
     }
 }
 
@@ -351,6 +412,15 @@ img {
         display: flex;
         flex-flow: row wrap;
     }
+    .promo-info__text {
+        font-size: 22px;
+    }
+    .promo-info img {
+        max-width: 150px;
+    }
+    .promo-features {
+        flex-flow: row wrap;
+    }
 }
 
 @media screen and (max-width: 600px)
@@ -395,6 +465,16 @@ img {
     .reviews__text {
         font-size: 16px;
     }
+    .promo-info {
+        flex-flow: column nowrap;
+    }
+    .promo-info img {
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+    .promo-info__text {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -415,6 +495,9 @@ img {
     .header-button {
         font-size: 19px;
         padding: 15px 30px;
+    }
+    .promo-info__text {
+        font-size: 21px;
     }
 }
 

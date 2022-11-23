@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html, body {
     min-height: 100%;
 }
@@ -17,6 +21,20 @@ body {
 body, input, textarea, button, a {
     font-family: 'Montserrat', sans-serif;
     font-size: 19px;
+}
+
+input {
+    outline: 0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
 }
 
 .container {
@@ -293,6 +311,118 @@ img {
     background-color: #6d115e;
 }
 
+.order {
+    background: #abbaab;
+    background: linear-gradient(to top, #ffffff, #abbaab);
+
+    padding: 50px 0;
+}
+
+.order-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 72px;
+    font-weight: normal;
+    transition: .6s all;
+}
+
+.order-title span {
+    font-weight: bold;
+}
+
+.order-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.order-info img {
+    margin-right: 50px;
+    max-width: 250px;
+}
+
+.order-form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    padding-bottom: 35px;
+    gap: 15px;
+}
+
+.order-input {
+    position: relative;
+}
+
+.order-input .tooltip {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    width: 100%;
+    text-align: right;
+    transform: scale(0);
+    transition: .3s all;
+}
+
+.order-form input {
+    font-size: 22px;
+    transition: .3s all;
+    padding: 10px 35px;
+    border-radius: 45px;
+    cursor: pointer;
+    border: 0;
+    border: 3px solid #6d115e;
+}
+
+.order-form input:focus + .tooltip, .order-form input:active + .tooltip {
+    transform: scale(1);
+}
+.order-button {
+    color: #FFFFFF;
+    background-color: #6d115e;
+    font-size: 26px;
+    transition: .3s all;
+    padding: 15px 35px;
+    border-radius: 45px;
+    cursor: pointer;
+    border: 0;
+}
+
+.order-button:hover {
+    color: #34063c;
+    background-color: #e4af00;
+}
+
+.order-timer {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-weight: bold;
+}
+
+.order-price {
+    display: flex;
+    flex-flow: row nowrap;
+    padding-left: 25px;
+    font-size: 36px;
+    margin-bottom: 20px;
+
+    white-space: nowrap;
+}
+
+.order-price .new {
+    display: inline-block;
+    font-weight: bold;
+    animation: 1s pulse infinite;
+}
+
+.order-price .old {
+    display: inline-block;
+    transform: rotate(16deg) scale(0.6) translate(-100px, -5px);
+    text-decoration: line-through;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -331,7 +461,7 @@ img {
     .container {
         padding: 0 45px;
     }
-    .header-title {
+    .header-title, .order-title {
         font-size: 96px;
         text-align: center;
     }
@@ -421,6 +551,10 @@ img {
     .promo-features {
         flex-flow: row wrap;
     }
+    .order-info img {
+        max-width: 150px;
+        margin-right: 25px;
+    }
 }
 
 @media screen and (max-width: 600px)
@@ -428,7 +562,7 @@ img {
     .container {
         padding: 0 35px;
     }
-    .header-title {
+    .header-title, .order-title {
         font-size: 17vw;
     }
     .header-features {
@@ -475,6 +609,31 @@ img {
     .promo-info__text {
         text-align: center;
     }
+    .order-info img {
+        max-width: 100px;
+        margin-right: 0;
+        margin-left: 25px;
+        align-self: flex-end;
+        padding-bottom: 75px;
+    }
+    .order-info {
+        flex-flow: row-reverse nowrap;
+    }
+    .order-timer {
+        font-size: 23px;
+    }
+    .order-form {
+        width: 100%;
+    }
+    .order-price {
+        align-self: end;
+    }
+    .order-form input {
+        width: 100%;
+    }
+    .order-input .tooltip {
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -499,6 +658,19 @@ img {
     .promo-info__text {
         font-size: 21px;
     }
+    .order-info img {
+        max-width: 0;
+        display: none;
+    }
+    .order-timer {
+        text-align: center;
+    }
+    .order-price {
+        margin-left: 45px;
+    }
+    .order-price .old {
+        font-size: 29px;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -521,5 +693,14 @@ img {
     }
     .feature-items__text {
         font-size: 22px;
+    }
+    .order-timer {
+        font-size: 19px;
+    }
+    .order-button {
+        font-size: 22px;
+    }
+    .order-input .tooltip {
+        font-size: 16px;
     }
 }
